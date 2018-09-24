@@ -149,7 +149,7 @@ class DonationDeCle():
 			return
 
 		else:
-			LOG.debug("updating with",len(results),"values")
+			LOG.debug("updating with" + str(len(results)) + "values")
 
 		
 		values = []
