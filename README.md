@@ -13,6 +13,7 @@ DATABASE : SQLite3 named "keys.db"
 CREATE TABLE "givekey" ( `key` INTEGER NOT NULL, `username` TEXT NOT NULL, given INTEGER DEFAULT 0, FOREIGN KEY(key) REFERENCES steamkeys(rowId) )
 CREATE TABLE "steamkeys" ( `user` text, `platform` text, `game` text, `date` text, `counter` INTEGER, `rowId` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE )
 CREATE UNIQUE INDEX uq_givekey ON givekey("key", "username")
+CREATE TABLE "twitter" ( `account` TEXT, `lastTweet` INTEGER )
 
 CONFIG FILE : config.py with these parameters :
 
@@ -39,4 +40,3 @@ TWITTER_CONSUMER_KEY = '<key>'
 TWITTER_CONSUMER_SECRET = '<key>'
 TWITTER_ACCESS_TOKEN = '<key>'
 TWITTER_ACCESS_TOKEN_SECRET = '<key>'
-TWITTER_ACCOUNTS = ["zqsdfr", "abcdpodcast", "Joystick_lemag", "labiteajika"]
